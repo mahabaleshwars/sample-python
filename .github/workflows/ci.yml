@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9-v7.3.14", "3.10-v7.3.14", "3.11-v7.3.14"]
+        python-version: ["3.9", "3.10", "3.11", "pypy3.9", "pypy3.10"]
+        
 
     steps:
       - uses: actions/checkout@v4
@@ -15,6 +16,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+          check-latest: true
       - name: venv.create
         run: |
           python -c 'import venv; venv.create("venv", with_pip=True)'
