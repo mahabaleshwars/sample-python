@@ -9,8 +9,8 @@ jobs:
     steps:
     - name: Setup Checkout
       uses: actions/checkout@v4
-    - name: Remoce lsb-release
-      run: sudo apt-get remove lsb-releas
+    - name: Remove lsb-release
+      run: sudo apt-get remove lsb-release
     # - name: Apt Update
     #   run: sudo apt-get update
     # - name: Install lsb-release
