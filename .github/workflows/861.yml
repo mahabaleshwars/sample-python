@@ -9,10 +9,12 @@ jobs:
     steps:
     - name: Setup Checkout
       uses: actions/checkout@v4
-    - name: Apt Update
-      run: sudo apt-get update
-    - name: Install lsb-release
-      run: sudo apt-get install -y lsb-release
+    - name: Remoce lsb-release
+      run: sudo apt-get remove lsb-releas
+    # - name: Apt Update
+    #   run: sudo apt-get update
+    # - name: Install lsb-release
+    #   run: sudo apt-get install -y lsb-release
     - name: Set up python 3.11
       uses: actions/setup-python@v5
       with:
