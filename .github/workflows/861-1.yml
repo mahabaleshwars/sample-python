@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Setup Checkout
       uses: actions/checkout@v4
-    - name: Set up python 3.11
+    - name: Set up python 3.9
       uses: actions/setup-python@v5
       with:
         python-version: '3.9'
