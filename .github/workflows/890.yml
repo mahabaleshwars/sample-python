@@ -7,23 +7,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # container:
-    #   image: amazonlinux:2023
+    container:
+      image: amazonlinux:2023
 
     steps:
-      # - name: Install necessary packages
-      #   run: |
-      #     yum update -y
-      #     yum install -y tar
-      #     yum install -y tar gzip
+      - name: Install necessary packages
+        run: |
+          yum update -y
+          yum install -y tar
+          yum install -y tar gzip
       - name: Checkout code
         uses: actions/checkout@v4
       - name: GLIBC version
         run: ldd --version
-      - name: Set up python 3.9
+      - name: Set up python 3.8.10
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.8.10'
       - name: Cache pip
         uses: actions/cache@v4
         with:
