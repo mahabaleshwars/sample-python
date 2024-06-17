@@ -7,14 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: amazonlinux:2023
+    # container:
+    #   image: amazonlinux:2023
 
     steps:
-      - name: Install necessary packages
-        run: |
-          yum update -y
-          yum install -y tar
+      # - name: Install necessary packages
+      #   run: |
+      #     yum update -y
+      #     yum install -y tar
           yum install -y tar gzip
       - name: Checkout code
         uses: actions/checkout@v4
