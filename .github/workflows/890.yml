@@ -19,9 +19,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Apt Update
-        run: sudo apt-get update
+        run: yum apt-get update
       - name: Install lsb-release
-        run: sudo apt-get install -y lsb-release
+        run: yum apt-get install -y lsb-release
       - name: Set up python 3.11
         uses: actions/setup-python@v5
         with:
