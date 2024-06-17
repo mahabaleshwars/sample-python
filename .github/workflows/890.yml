@@ -1,0 +1,25 @@
+name: 890 issue
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: amazonlinux:2023
+
+    steps:
+      - name: Install necessary packages
+        run: |
+          yum update -y
+          yum install -y tar
+          yum install -y tar gzip
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
