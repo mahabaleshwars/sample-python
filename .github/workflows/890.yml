@@ -11,11 +11,11 @@ jobs:
     #   image: amazonlinux:2023
 
     steps:
-      - name: Install necessary packages
-        run: |
-          yum update -y
-          yum install -y tar
-          yum install -y tar gzip
+      # - name: Install necessary packages
+      #   run: |
+      #     yum update -y
+      #     yum install -y tar
+      #     yum install -y tar gzip
       - name: Checkout code
         uses: actions/checkout@v4
       - name: GLIBC version
