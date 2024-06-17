@@ -16,12 +16,9 @@ jobs:
           yum update -y
           yum install -y tar
           yum install -y tar gzip
+          yum install -y lsb-release
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Apt Update
-        run: yum apt-get update
-      - name: Install lsb-release
-        run: yum apt-get install -y lsb-release
       - name: Set up python 3.11
         uses: actions/setup-python@v5
         with:
