@@ -16,6 +16,7 @@ jobs:
           yum update -y
           yum install -y tar
           yum install -y tar gzip
+          yum install -y system-lsb-core
       - name: Checkout code
         uses: actions/checkout@v4
       - name: GLIBC version
