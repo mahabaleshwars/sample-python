@@ -1,0 +1,24 @@
+name: 783 error
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Uninstall Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+      
+    - name: Set up Python 3.10.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10.13'
+      
+    - name: Run Python 3.10.13
+      run: python3.10 --version
