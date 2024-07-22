@@ -1,0 +1,13 @@
+name: PR 912 Test 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pr_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup-Python
+      uses: priya-kinthali@897-fix-iarna/toml
