@@ -11,3 +11,5 @@ jobs:
       uses: actions/checkout@v4
     - name: Setup-Python
       uses: priya-kinthali/setup-python@897-fix-iarna/toml
+      with:
+        python-version: '3.9'
