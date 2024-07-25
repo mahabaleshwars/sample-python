@@ -22,9 +22,9 @@ jobs:
     - name: Install dependencies
       run: |
         # Download gettext source
-        curl -O http://ftp.gnu.org/gnu/gettext/gettext-latest.tar.gz
-        tar -xzf gettext-latest.tar.gz
-        cd gettext-*
+        curl -O http://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.gz
+        tar -xzf gettext-0.21.1.tar.gz
+        cd gettext-0.21.1
         
         # Build and install gettext
         ./configure
