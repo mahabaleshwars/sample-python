@@ -19,10 +19,17 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
         
-    - name: Update and install gettext
+    - name: Install dependencies
       run: |
-        sudo apk update
-        sudo apk add gettext
+        # Download gettext source
+        curl -O http://ftp.gnu.org/gnu/gettext/gettext-latest.tar.gz
+        tar -xzf gettext-latest.tar.gz
+        cd gettext-*
+        
+        # Build and install gettext
+        ./configure
+        make
+        sudo make install
 
       
     - name: Set up Python 
