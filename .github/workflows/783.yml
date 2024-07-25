@@ -8,8 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-12]
-        version: [3.8,3.9,3.10,3.11,3.12]
+        os: [macos-11,macos-12,macos-13]
+       
 
     steps:
     - name: Checkout repository
@@ -19,10 +19,10 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
       
-    - name: Set up Python ${{ matrix.os }}
+    - name: Set up Python 
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.os }}
+        python-version: 3.10.13
       
-    - name: Run Python ${{ matrix.os }}
-      run: python${{ matrix.os }} --version
+    - name: Run Python3.10.13
+      run: python --version
