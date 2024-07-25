@@ -21,6 +21,15 @@ jobs:
         
     - name: Install dependencies
       run: |
+        # Download and install OpenSSL
+        curl -O https://www.openssl.org/source/openssl-1.1.1u.tar.gz
+        tar -xzf openssl-1.1.1u.tar.gz
+        cd openssl-1.1.1u
+        ./config
+        make
+        sudo make install
+        cd ..
+        
         # Download gettext source
         curl -O http://ftp.gnu.org/gnu/gettext/gettext-0.21.1.tar.gz
         tar -xzf gettext-0.21.1.tar.gz
@@ -30,6 +39,12 @@ jobs:
         ./configure
         make
         sudo make install
+        cd ..
+
+        # Setup Python environment variables to include OpenSSL
+        export LDFLAGS="-L/usr/local/ssl/lib"
+        export CPPFLAGS="-I/usr/local/ssl/include"
+        export PKG_CONFIG_PATH="/usr/local/ssl/lib/pkgconfig"
 
       
     - name: Set up Python 
