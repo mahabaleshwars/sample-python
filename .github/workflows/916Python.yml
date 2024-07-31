@@ -19,4 +19,4 @@ jobs:
     - name: Setup Python
       uses: priyagupta108/setup-python@fix-windows-extract-archive
       with:
-        python-version: ${{matrix.python-version}}
+        python-version: '3.13.0-beta.4'
