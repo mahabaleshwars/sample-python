@@ -12,4 +12,4 @@ jobs:
     - name: Setup Python
       uses: priyagupta108/setup-python@fix-windows-extract-archive
       with:
-        python-version: '3.12'
+        python-version: 'pypy3.9'
