@@ -10,6 +10,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
     - name: Setup Python
-      uses: priyagupta108/setup-python@fix-windows-extract-archive
+      # uses: priyagupta108/setup-python@fix-windows-extract-archive
+      uses: actions/setup-python@v4
       with:
         python-version: '3.13.0-beta.4'
