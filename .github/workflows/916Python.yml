@@ -6,7 +6,7 @@ on:
 
 jobs:
   PR_Test:
-    runs-on: winx64
+    runs-on: x64
     strategy:
       matrix:
         python-version: ['pypy3.9','3.13.0-beta.4','3.12']
