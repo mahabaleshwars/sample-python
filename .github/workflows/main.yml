@@ -14,7 +14,7 @@ jobs:
         n=0
         until [ "$n" -ge 5 ]
         do
-          actions/setup-python@v4 --python-version '3.12.3' && echo "Setup Python succeeded on attempt $((n+1))" && break
+          actions/setup-python@v5 --python-version '3.12.3' && echo "Setup Python succeeded on attempt $((n+1))" && break
           n=$((n+1))
           sleep 15
         done
