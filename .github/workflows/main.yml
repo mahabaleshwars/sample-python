@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: 3.9.19
+      - name : uninstall numpy
+        run: python -m pip uninstall numpy
 
       - name: install requirments
         run: |
