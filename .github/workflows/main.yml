@@ -21,6 +21,5 @@ jobs:
       - name: Check the numpy version
         run: |
           python -m pip freeze | grep numpy
-          python -c 'import numpy as np
-          print(np.__version__)'
-  
+          # python -c 'import numpy as np
+          python -c "import numpy as np; print('numpy version: ' + np.__version__)"  
