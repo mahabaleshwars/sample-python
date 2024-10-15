@@ -13,7 +13,9 @@ jobs:
         with:
           python-version: 3.9.19
       - name : uninstall numpy
-        run: python -m pip uninstall numpy
+        run: |
+              python -m pip uninstall numpy
+              python -m pip cache purge
 
       - name: install requirments
         run: |
