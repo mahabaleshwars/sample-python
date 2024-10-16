@@ -27,8 +27,8 @@ jobs:
           python -m pip show numpy
           # pip list | grep numpy
           # python -c "import sys; print(sys.path)"
-      - name: find numpy
-        run: find / -name numpy
+      # - name: find numpy
+      #   run: find / -name numpy
       - name: grep numpy
         run: pip list | grep numpy
 
