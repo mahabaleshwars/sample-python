@@ -22,11 +22,11 @@ jobs:
             python -m pip install numpy --ignore-installed
       - name: list numpy
         run: |
-          python -m pip list | grep numpy
-          python -c "import numpy as np; print(np.__file__)"
+          # python -m pip list | grep numpy
+          # python -c "import numpy as np; print(np.__file__)"
           python -m pip show numpy
-          pip list | grep numpy
-          python -c "import sys; print(sys.path)"
+          # pip list | grep numpy
+          # python -c "import sys; print(sys.path)"
 
       - name: Run which python command in Python
         run: |
