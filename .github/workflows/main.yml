@@ -21,7 +21,16 @@ jobs:
             python -m pip install numpy==1.26.4
             python -m pip install numpy 
       - name: list numpy
-        run: python -m pip list | grep numpy
+        run: |
+          python -m pip list | grep numpy
+          python -c "import numpy as np; print(np.__file__)"
+      - name: Run which python command in Python
+        run: |
+          python -c "import subprocess; result = subprocess.run(['which', 'python'], stdout=subprocess.PIPE); print(result.stdout.decode('utf-8'))"
+
+      - name: Run which pip command in Python
+        run: |
+          python -c "import subprocess; result = subprocess.run(['which', 'pip'], stdout=subprocess.PIPE); print(result.stdout.decode('utf-8'))"
 
       - name: Check the numpy version
         run: |
