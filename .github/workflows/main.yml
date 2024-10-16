@@ -30,8 +30,12 @@ jobs:
       # - name: find numpy
       #   run: find / -name numpy
       - name: grep numpy
-        run: pip list | grep numpy
-
+        run: |
+            pip list | grep numpy
+            python -c "import numpy as np; print(np.__file__)"
+            pip list
+            python -m site
+            echo $PYTHONPATH
 
       - name: Run which python command in Python
         run: |
