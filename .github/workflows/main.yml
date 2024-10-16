@@ -24,6 +24,10 @@ jobs:
         run: |
           python -m pip list | grep numpy
           python -c "import numpy as np; print(np.__file__)"
+          python -m pip show numpy
+          pip list | grep numpy
+          python -c "import sys; print(sys.path)"
+
       - name: Run which python command in Python
         run: |
           python -c "import subprocess; result = subprocess.run(['which', 'python'], stdout=subprocess.PIPE); print(result.stdout.decode('utf-8'))"
