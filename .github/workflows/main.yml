@@ -28,8 +28,15 @@ jobs:
         run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/version.py
       - name: Print _version.py
         run: cat //opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/lib/_version.py
-      - name: Print gitversion.py
-        run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/_build_utils/gitversion.py
+      # - name: Print gitversion.py
+      #   run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/_build_utils/gitversion.py
+
+      - name: Install tree package
+        run: sudo apt-get install -y tree
+  
+      - name: Print directory contents
+        run: tree /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy
+
       - name: Check Python executable for pip freeze
         run: |
           which python
