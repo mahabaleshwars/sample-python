@@ -20,16 +20,16 @@ jobs:
             python -m pip install numpy==1.26.4
             python -m pip install numpy --ignore-installed
 
-      - name: Print NumPy METADATA
-        run: |
-          METADATA_PATH=$(python -c "import numpy; import os; print(os.path.join(os.path.dirname(numpy.__file__), f'{numpy.__name__}-*.dist-info', 'METADATA'))")
-          cat $METADATA_PATH
-      # - name: Print init.py
-      #   run: cat /path/to/numpy/version.py
-      # - name: Print _version.py
-      #   run: cat /path/to/numpy/lib/_version.py
-      # - name: Print gitversion.py
-      #   run: cat /path/to/numpy/_build_utils/gitversion.py
+      # - name: Print NumPy METADATA
+      #   run: |
+      #     METADATA_PATH=$(python -c "import numpy; import os; print(os.path.join(os.path.dirname(numpy.__file__), f'{numpy.__name__}-*.dist-info', 'METADATA'))")
+      #     cat $METADATA_PATH
+      - name: Print init.py
+        run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/version.py
+      - name: Print _version.py
+        run: cat //opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/lib/_version.py
+      - name: Print gitversion.py
+        run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/_build_utils/gitversion.py
       - name: Check Python executable for pip freeze
         run: |
           which python
