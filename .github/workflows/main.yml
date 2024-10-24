@@ -21,8 +21,9 @@ jobs:
             python -m pip install numpy --ignore-installed
       - name: Print NumPy METADATA
         run: |
-          METADATA_PATH=$(python -c "import numpy; import os; print(os.path.join(os.path.dirname(numpy.__file__), 'numpy-*.dist-info', 'METADATA'))")
-          cat $METADATA_PATH
+          python -c "import numpy; print(numpy.__file__)"
+          # METADATA_PATH=$(python -c "import numpy; import os; print(os.path.join(os.path.dirname(numpy.__file__), 'numpy-*.dist-info', 'METADATA'))")
+          # cat $METADATA_PATH
       - name: Check Python executable for pip freeze
         run: |
           which python
