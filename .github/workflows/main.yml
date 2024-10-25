@@ -24,6 +24,10 @@ jobs:
       #   run: |
       #     METADATA_PATH=$(python -c "import numpy; import os; print(os.path.join(os.path.dirname(numpy.__file__), f'{numpy.__name__}-*.dist-info', 'METADATA'))")
       #     cat $METADATA_PATH
+      - name: Print NumPy METADATA
+        run: |
+          METADATA_FILE=$(python -c "import numpy; import pkg_resources; print(pkg_resources.get_distribution('numpy').egg_info + '/METADATA')")
+          cat "$METADATA_FILE"
       - name: Print init.py
         run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/version.py
       - name: Print _version.py
