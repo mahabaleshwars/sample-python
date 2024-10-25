@@ -27,7 +27,14 @@ jobs:
       - name: Print NumPy METADATA
         run: |
           METADATA_FILE=$(python -c "import numpy; import pkg_resources; print(pkg_resources.get_distribution('numpy').egg_info + '/METADATA')")
+          echo "Printing METADATA:"
           cat "$METADATA_FILE"
+
+      - name: Print NumPy PKG-INFO
+        run: |
+          PKG_INFO_FILE=$(python -c "import numpy; import pkg_resources; print(pkg_resources.get_distribution('numpy').egg_info + '/PKG-INFO')")
+          echo "Printing PKG-INFO:"
+          cat "$PKG_INFO_FILE" || echo "PKG-INFO file not found."
       - name: Print init.py
         run: cat /opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/numpy/version.py
       - name: Print _version.py
