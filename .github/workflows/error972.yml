@@ -1,6 +1,8 @@
 name: error 972
 
 on:
+  schedule:
+      - cron: "* * * * *" # Runs every 1 minute
   workflow_dispatch:
 
 jobs:
