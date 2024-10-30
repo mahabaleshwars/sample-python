@@ -25,7 +25,7 @@ jobs:
 
     - name: Create pip cache directory (Windows only)
       if: runner.os == 'Windows'
-      run: mkdir -p C:\Users\runneradmin\AppData\Local\pip\cache
+      run: if (-Not (Test-Path -Path "C:\Users\runneradmin\AppData\Local\pip\cache")) {mkdir -p C:\Users\runneradmin\AppData\Local\pip\cache}
 
     - name: Install dependencies
       run: |
