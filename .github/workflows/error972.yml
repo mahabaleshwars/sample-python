@@ -20,7 +20,7 @@ jobs:
     - name: Set up PyPy 3.10
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10.10
+        python-version: 3.8.17
         cache: pip
 
     - name: Create pip cache directory (Windows only)
