@@ -21,25 +21,19 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.10
-    #     cache: pip
+        cache: pip
 
-    # - name: Create pip cache directory (Windows only)
-    #   if: runner.os == 'Windows'
-    #   run: if (-Not (Test-Path -Path "C:\Users\runneradmin\AppData\Local\pip\cache")) {mkdir -p C:\Users\runneradmin\AppData\Local\pip\cache}
+    - name: Create pip cache directory (Windows only)
+      if: runner.os == 'Windows'
+      run: if (-Not (Test-Path -Path "C:\Users\runneradmin\AppData\Local\pip\cache")) {mkdir -p C:\Users\runneradmin\AppData\Local\pip\cache}
 
-    # - name: Install dependencies
-    #   run: |
-    #     python -m ensurepip
-    #     pip install --upgrade pip
-    #     pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m ensurepip
+        pip install --upgrade pip
+        pip install -r requirements.txt
         
     - name: Print uv version
       run: |
         pip show uv
         
-    # - name: Install pytest
-    #   run: pip install pytest
-
-    # - name: Run tests
-    #   run: |
-    #     pytest
