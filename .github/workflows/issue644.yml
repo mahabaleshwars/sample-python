@@ -7,20 +7,20 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
       matrix:
-        python-version: ["2.7", "3.7", "3.10", "*", "3.12-dev", pypy-2.7, pypy-3.9]  # check the list of versions: https://github.com/actions/python-versions/releases and https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md -- note that "*" represents the latest stable version of Python
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.7', '3.8', '3.9', '3.10', 'pypy2.7', 'pypy3.8']
+        exclude:
+          - os: macos-latest
+            python-version: '3.8'
+          - os: windows-latest
+            python-version: '3.6'
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-        cache: 'pip'
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    # You can test your matrix by printing the current Python version
-    - name: Display Python version
-      run: |
-        python -c "import sys; print(sys.version)"
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Display Python version
+        if: ${{ python-version != 'pypy2.7' }} # in if statements, use single-quotes (not double-quotes) in expressions to test input `python-version`
+        run: python --version
