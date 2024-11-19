@@ -1,0 +1,22 @@
+name: Reproduce Python Setup Issue
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  setup-python:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Verify Python Installation
+      run: |
+        python --version
+        sudo installer -pkg /Users/runner/action-runner-SWFqZtGKOq/actions-runner/_work/_temp/df05e121-b43f-42c3-a7-b5ccac0d6862/python-3.11.9-macos11.pkg -target /
