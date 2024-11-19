@@ -19,4 +19,3 @@ jobs:
     - name: Verify Python Installation
       run: |
         python --version
-        sudo installer -pkg /Users/runner/action-runner-SWFqZtGKOq/actions-runner/_work/_temp/df05e121-b43f-42c3-a7-b5ccac0d6862/python-3.11.9-macos11.pkg -target /
