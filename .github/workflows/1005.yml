@@ -2,7 +2,7 @@ name: Error 1005
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   test:
     name: Build and test
@@ -16,8 +16,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Ensure pip cache directory exists
-        run: mkdir -p ${{ runner.temp }}/pip/cache
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
