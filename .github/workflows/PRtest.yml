@@ -10,4 +10,4 @@ jobs:
     - uses: actions/checkout@v4
     - uses: elpic/setup-python@main
       with:
-        python-version-file: .tool-version
+        python-version: 3.11.10
