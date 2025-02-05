@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      id: setuppy
+    - uses: elpic/setup-python@main
       with:
-        python-version: "3.8.0 - 3.10.0"
-    - run: echo '${{ steps.setuppy.outputs.python-version }}'
+        python-version-file: .tool-versions
