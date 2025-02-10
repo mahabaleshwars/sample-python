@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
-    - uses: elpic/setup-python@main
+    - uses: mahabaleshwars/setup-python-main@main
       with:
         python-version-file: .tool-versions
