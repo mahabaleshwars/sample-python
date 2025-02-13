@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v4
     - uses: mahabaleshwars/setup-python-tool-versions-regex@main
       with:
-        python-version: .tool-versions
+        python-version-file: .tool-versions
