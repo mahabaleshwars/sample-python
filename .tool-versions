@@ -1,4 +1,4 @@
 java 21.0.2
-python pypy-3.7-nightly
+python 3.14-dev
 
 poetry 1.3.1
