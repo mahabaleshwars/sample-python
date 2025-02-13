@@ -12,6 +12,6 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-13]
     steps:
     - uses: actions/checkout@v4
-    - uses: aparnajyothi-y/setup-python@tool-versions-regex
+    - uses: mahabaleshwars/setup-python-tool-versions-regex@main
       with:
-        python-version: 3.13.0-alpha - 3.13.0
+        python-version: .tool-versions
