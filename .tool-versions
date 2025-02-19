@@ -1,7 +1,7 @@
 java 21.0.2
 
 poetry 1.3.1
-python pypy3.11-7.3.18-src
+python pypy3.10-7.3.18
 
 python graalpy-dev
 python graalpy-community-23.1.0
