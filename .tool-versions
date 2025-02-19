@@ -1,7 +1,7 @@
 java 21.0.2
 
 poetry 1.3.1
-python pypy3.5-5.7.1-beta-src
+python pypy3.5-5.8.0-src
 
 
 python 3.7.17
