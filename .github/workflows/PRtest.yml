@@ -15,3 +15,6 @@ jobs:
     - uses: mahabaleshwars/setup-python@feature/tool-version-file
       with:
         python-version-file: .tool-versions
+    - name: list python versions
+      run: python --version
+
