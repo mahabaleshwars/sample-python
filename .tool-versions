@@ -1,7 +1,8 @@
 java 21.0.2
 
 poetry 1.3.1
-python  jython-2.7.3
+python mambaforge-pypy
+
 python graalpy-dev
 python graalpy-community-23.1.0
 python graalpy-22.3.0
