@@ -18,7 +18,7 @@ jobs:
       - name: Ensure correct permissions for /Users/runner/hostedtoolcache
         run: |
           sudo mkdir -p /Users/runner/hostedtoolcache
-          sudo chown gowri:staff /Users/runner/hostedtoolcache
+          sudo chown mahabaleshwars:staff /Users/runner/hostedtoolcache
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
