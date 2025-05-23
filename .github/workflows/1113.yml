@@ -15,9 +15,25 @@ jobs:
         with:
           persist-credentials: false
           
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y lsb-release
+      - name: Install OS dependencies required for setup-python
+        run: |
+          apt-get update
+          apt-get install -y \
+            lsb-release \
+            libnss3 \
+            libxkbcommon0 \
+            libffi-dev \
+            libssl-dev \
+            zlib1g \
+            libbz2-1.0 \
+            liblzma5 \
+            libreadline-dev \
+            libsqlite3-0 \
+            libncursesw5 \
+            libgdbm-compat4 \
+            libuuid1 \
+            curl \
+            ca-certificates
              
       - uses: actions/setup-python@v5
         with:
