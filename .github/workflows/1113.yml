@@ -1,0 +1,28 @@
+name: Issue 1113
+
+on:
+  push:
+    branches:
+     - master
+  pull_request:
+
+jobs:
+  build:
+    name: Test build
+    runs-on: ubuntu-latest
+    container:
+      image: 'devkitpro/devkita64'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip' # caching pip dependencies
+          run: pip install lz4
+
+      - name: test
+        run: ls -la
