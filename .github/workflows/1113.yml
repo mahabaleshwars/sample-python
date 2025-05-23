@@ -15,30 +15,15 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: Install OS dependencies required for setup-python
+      - name: Install Python and pip
         run: |
           apt-get update
-          apt-get install -y \
-            lsb-release \
-            libnss3 \
-            libxkbcommon0 \
-            libffi-dev \
-            libssl-dev \
-            zlib1g \
-            libbz2-1.0 \
-            liblzma5 \
-            libreadline-dev \
-            libsqlite3-0 \
-            libncursesw5 \
-            libgdbm-compat4 \
-            libuuid1 \
-            curl \
-            ca-certificates
+          apt-get install -y python3 python3-pip
              
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip' # caching pip dependencies
+      # - uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.10'
+      #     cache: 'pip' # caching pip dependencies
           
       - run: pip install lz4
 
