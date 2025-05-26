@@ -19,6 +19,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y curl lsb-release
+          apt-get install -y python3-distutils
           curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
           python3 get-pip.py
           rm get-pip.py
