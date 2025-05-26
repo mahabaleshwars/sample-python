@@ -19,6 +19,9 @@ jobs:
         run: |
           apt-get update
           apt-get install -y curl lsb-release
+          curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+          python3 get-pip.py
+          rm get-pip.py
 
       - uses: actions/setup-python@v5
         with:
