@@ -8,7 +8,8 @@ jobs:
     name: Test build
     runs-on: ubuntu-latest
     container:
-      image: 'devkitpro/devkita64'
+        image: ubuntu:22.04
+      # image: 'devkitpro/devkita64'
 
     steps:
       - uses: actions/checkout@v4
@@ -18,9 +19,9 @@ jobs:
       - name: Clear Python cache
         run: |
           sudo rm -rf /__t/Python
-      - name: Create /etc/lsb-release
-        run: |
-           echo 'DISTRIB_CODENAME=debian' | sudo tee -a /etc/lsb-release
+      # - name: Create /etc/lsb-release
+      #   run: |
+      #      echo 'DISTRIB_CODENAME=debian' | sudo tee -a /etc/lsb-release
       - name: Add missing utilities for setup-python
         run: |
           apt-get update
