@@ -18,7 +18,7 @@ jobs:
 
       - name: Clear Python cache
         run: |
-          su rm -rf /__t/Python
+          su -c "rm -rf /__t/Python"
       # - name: Create /etc/lsb-release
       #   run: |
       #      echo 'DISTRIB_CODENAME=debian' | sudo tee -a /etc/lsb-release
