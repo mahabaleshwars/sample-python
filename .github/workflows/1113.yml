@@ -14,11 +14,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+
+      - name: Clear Python cache
+        run: |
+          sudo rm -rf /__t/Python
        
       - name: Add missing utilities for setup-python
         run: |
           apt-get update
           apt-get install -y curl lsb-release
+     
 
       - uses: actions/setup-python@v5
         with:
