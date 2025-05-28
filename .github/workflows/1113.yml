@@ -13,19 +13,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       - name: Clear Python cache
         run: |
           su -c "rm -rf /__t/Python"
+          
       # - name: Create /etc/lsb-release
       #   run: |
-      #      echo 'DISTRIB_CODENAME=debian' | sudo tee -a /etc/lsb-release
-      - name: Add missing utilities for setup-python
-        run: |
-          apt-get update
-          apt-get install -y curl lsb-release
+      #     echo "DISTRIB_RELEASE=22.04" | sudo tee -a /etc/lsb-release
+          
+      # - name: Add missing utilities for setup-python
+      #   run: |
+      #     apt-get update
+      #     apt-get install -y curl lsb-release
      
 
       - uses: actions/setup-python@v5
