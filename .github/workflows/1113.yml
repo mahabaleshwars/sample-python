@@ -21,10 +21,10 @@ jobs:
       - name: Create /etc/lsb-release
         run: |
            sudo tee -a /etc/lsb-release
-      - name: Add missing utilities for setup-python
-        run: |
-          apt-get update
-          apt-get install -y curl lsb-release
+      # - name: Add missing utilities for setup-python
+      #   run: |
+      #     apt-get update
+      #     apt-get install -y curl lsb-release
      
 
       - uses: actions/setup-python@v5
