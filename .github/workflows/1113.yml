@@ -7,8 +7,7 @@ jobs:
   build:
     name: Test build
     runs-on: ubuntu-latest
-    container:
-      image: 'devkitpro/devkita64'
+
 
     steps:
       - uses: actions/checkout@v4
