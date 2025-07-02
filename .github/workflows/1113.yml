@@ -12,26 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Clear Python cache
-        run: |
-          su -c "rm -rf /__t/Python"
-          
-      # - name: Create /etc/lsb-release
-      #   run: |
-      #     echo "DISTRIB_RELEASE=22.04" | sudo tee -a /etc/lsb-release
-          
-      # - name: Add missing utilities for setup-python
-      #   run: |
-      #     apt-get update
-      #     apt-get install -y curl lsb-release
-     
-
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-
-      - run: pip install lz4
-
-      - name: test
-        run: ls -la
+          python-version: '3.13'
+          cache: 'pip'
+        env:
+          PIP_ROOT_USER_ACTION: ignore
